@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2092
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Mosaixjsonfileprocess", "Mosaixjsonfileprocess\Mosaixjsonfileprocess.dtproj", "{DA08952F-8EA3-4B12-9C64-4811332E166A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA08952F-8EA3-4B12-9C64-4811332E166A}.Development|Default.ActiveCfg = Development
+		{DA08952F-8EA3-4B12-9C64-4811332E166A}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F1F0F50-CF0E-418C-B669-A4C1E040B147}
+	EndGlobalSection
+EndGlobal
