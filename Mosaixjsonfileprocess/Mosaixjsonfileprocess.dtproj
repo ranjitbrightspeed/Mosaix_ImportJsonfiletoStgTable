@@ -26,11 +26,14 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">BSBIDEETL01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ8OAOcc9VkK0vDcxJR10kgAAAAACAAAAAAADZgAAwAAAABAAAAD2UITHsaT6TM+iwmjltuYRAAAAAASAAACgAAAAEAAAAOANG/1k+qcRv726fzBj++SIAAAAr4e1qlrAL+tRsnmuNwMNZ9b7U3Ak/M7RA7vbRoZrhIQ94GFL6x9UI8w69634RpxuZ/U5uQG1jkzukgD7ck427KEBZ3wWqanMJ1FfNPJ804e2KnxvjI8aekF2YTBlX+zVrC0ks9soNdpz9Hqq+dppoatPSrdvW4Ka8ysq84y5cAf9bnxJPOfaKRQAAAAP4/gxPTItxQHhdRFwjpeX2Rc0cw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ8OAOcc9VkK0vDcxJR10kgAAAAACAAAAAAADZgAAwAAAABAAAAAyL5tiFGzCmLMCUHHMVZMNAAAAAASAAACgAAAAEAAAAMiralPJzfAib7ZZyylDQcqIAAAAtRYPlClwIgzZ/TGKy3LGUIWuw2+tuvChSotBYx9RvVjxS215VMhsHKtIB6cjX4n5NXLOn5JUKaR83MAwZvt1yPCwstQt3J3pEBEzo2I8ey8Q2lQK5C77+CfDXLpemKwj7lXoeaQqLupdsWOpoZK79+Fyg9MxdkCboznF6LkSt8NYMzSqr7ap3BQAAAB2FROwYXylbo2NUeeiShrTIbxD4g==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="ccai_agents.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ccai_chats.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ccai_menus.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ccai_agent_activity_logs.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="WH01.mosaix.conmgr" />
@@ -312,10 +315,10 @@
                 <SSIS:Property SSIS:Name="Name">ccai_agents</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">133</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">153</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{132D6DF7-16F0-4AC4-8A82-70912F049A43}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{061C9D7B-574D-42F7-99FD-99BCBC822832}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -333,6 +336,102 @@
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">agents</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ccai_chats.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BC5BD141-CB6C-4D5F-8681-BC98E2642A36}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ccai_chats</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">22</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{132C1007-C680-43E5-B85A-5E5313569D50}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="SourcePrefixFileName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{CAD10CB4-944A-4E60-975B-F9DEE385987E}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">chats</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ccai_menus.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{E561A952-409B-425D-82F5-5579BE940C3B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ccai_menus</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">25</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9BDE39FB-D90C-4261-91B9-2898D4D6E315}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="SourcePrefixFileName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{4FCD08EF-7666-458C-AC34-852F8EFC6334}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">menus</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ccai_agent_activity_logs.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{C3183E02-434C-49E3-9EA5-3C2CB8BA345E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ccai_agent_activity_logs</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AF35DB27-F7D1-4CC1-9DF9-59917901E443}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="SourcePrefixFileName">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{CE17F53A-29F7-476C-B261-A413D896B511}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">agent_activity_logs</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
