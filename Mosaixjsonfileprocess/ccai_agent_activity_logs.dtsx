@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ccai_agent_activity_logs"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{EE04D73C-23B7-4C95-9AD0-0DC775100196}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{70C4C20D-8093-4C08-B1AC-A5C3C8370BB4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -49,12 +49,12 @@
       DTS:CreationName=""
       DTS:DTSID="{AFBACFC5-626A-4F9C-B33A-F99CBCA51E38}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::SourcePrefixFileName]+ &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_WSTR,2) DatePart(&quot;m&quot;,DATEADD(&quot;month&quot;, -1, GETDATE())),2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;DD&quot;, DATEADD(&quot;day&quot;, -12, GETDATE())),2) + &quot;*.*&quot;"
+      DTS:Expression="@[$Package::SourcePrefixFileName]+ &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_WSTR,2) DatePart(&quot;m&quot;,DATEADD(&quot;month&quot;, 0, GETDATE())),2) + &quot;*.*&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceFileName">
       <DTS:VariableValue
-        DTS:DataType="8">agent_activity_logs_20230120*.*</DTS:VariableValue>
+        DTS:DataType="8">agent_activity_logs_202302*.*</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -784,7 +784,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{6A6C57E2-AAB6-44B8-B418-E931B05D40BC}"
-              SQLTask:SqlStatementSource="exec [stg].[SPU_CCAI_Agent_Activity_Logs_Staging_Promote]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [stg].[SPU_CCAI_Agent_Activity_Logs_Staging_Promote];&#xA;exec [stg].[SPU_CCAI_Agent_Activity_Logs_Promote];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2532,7 +2532,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
+          Size="156,42.6666666666667"
           Id="Package\Get Sorted Files"
           TopLeft="115.468749173451,60" />
         <NodeLayout
@@ -2600,30 +2600,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           TopLeft="54.1250033061952,154.078949139224" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="193.468749173451,102">
+          TopLeft="193.468749173451,102.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.9895874660773,52.0789491392239"
+              EndConnector="10.9895874660776,51.4122824725573"
               Start="0,0"
-              End="10.9895874660773,44.5789491392239">
+              End="10.9895874660776,43.9122824725573">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.039474569612" />
+                    End="0,21.7061412362787" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.039474569612"
-                    Point2="0,26.039474569612"
-                    Point3="4,26.039474569612" />
+                    Point1="0,21.7061412362787"
+                    Point2="0,25.7061412362787"
+                    Point3="4,25.7061412362787" />
                   <mssgle:LineSegment
-                    End="6.98958746607732,26.039474569612" />
+                    End="6.98958746607755,25.7061412362787" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.98958746607732,26.039474569612"
-                    Point2="10.9895874660773,26.039474569612"
-                    Point3="10.9895874660773,30.039474569612" />
+                    Point1="6.98958746607755,25.7061412362787"
+                    Point2="10.9895874660776,25.7061412362787"
+                    Point3="10.9895874660776,29.7061412362787" />
                   <mssgle:LineSegment
-                    End="10.9895874660773,44.5789491392239" />
+                    End="10.9895874660776,43.9122824725573" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

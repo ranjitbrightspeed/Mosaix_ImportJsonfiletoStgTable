@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ccai_menus"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{9BDE39FB-D90C-4261-91B9-2898D4D6E315}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{31A80800-F9EA-450A-9493-B300BF69FAE7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -49,12 +49,12 @@
       DTS:CreationName=""
       DTS:DTSID="{86516D20-11BD-4094-BF76-98AF6FE1B177}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::SourcePrefixFileName]+ &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_WSTR,2) DatePart(&quot;m&quot;,DATEADD(&quot;month&quot;, -1, GETDATE())),2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;DD&quot;, DATEADD(&quot;day&quot;, -1, GETDATE())),2) + &quot;*.*&quot;"
+      DTS:Expression="@[$Package::SourcePrefixFileName]+ &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_WSTR,2) DatePart(&quot;m&quot;,DATEADD(&quot;month&quot;, 0, GETDATE())),2)  + &quot;*.*&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceFileName">
       <DTS:VariableValue
-        DTS:DataType="8">menus_20230131*.*</DTS:VariableValue>
+        DTS:DataType="8">menus_202302*.*</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -784,7 +784,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{6A6C57E2-AAB6-44B8-B418-E931B05D40BC}"
-              SQLTask:SqlStatementSource="exec [stg].[SPU_CCAI_Menus_Staging_Promote]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [stg].[SPU_CCAI_Menus_Staging_Promote];&#xA;exec [stg].[SPU_CCAI_Menus_Promote]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

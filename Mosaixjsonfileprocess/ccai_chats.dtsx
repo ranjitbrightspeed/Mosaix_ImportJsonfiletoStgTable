@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ccai_chats"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{132C1007-C680-43E5-B85A-5E5313569D50}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{38176DE1-F04D-4B03-865D-DB09A6254F40}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -49,12 +49,12 @@
       DTS:CreationName=""
       DTS:DTSID="{5D6B0867-215C-42DE-8223-4A50CD35AD44}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::SourcePrefixFileName] + &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_WSTR,2) DatePart(&quot;m&quot;,DATEADD(&quot;month&quot;, -1, GETDATE())),2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;DD&quot;, DATEADD(&quot;day&quot;, -1, GETDATE())),2) + &quot;*.*&quot;"
+      DTS:Expression="@[$Package::SourcePrefixFileName] + &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_WSTR,2) DatePart(&quot;m&quot;,DATEADD(&quot;month&quot;, 0, GETDATE())),2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;DD&quot;, DATEADD(&quot;day&quot;, 0, GETDATE())),2) + &quot;*.*&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceFileName">
       <DTS:VariableValue
-        DTS:DataType="8">chats_20230131*.*</DTS:VariableValue>
+        DTS:DataType="8">chats_20230213*.*</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -784,7 +784,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{6A6C57E2-AAB6-44B8-B418-E931B05D40BC}"
-              SQLTask:SqlStatementSource="exec [stg].[SPU_CCAI_Chats_Staging_Promote]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [stg].[SPU_CCAI_Chats_Staging_Promote];&#xA;exec [stg].[SPU_CCAI_Chats_Promote];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

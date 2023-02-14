@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ccai_agents"
   DTS:PackageType="5"
-  DTS:VersionBuild="153"
-  DTS:VersionGUID="{061C9D7B-574D-42F7-99FD-99BCBC822832}">
+  DTS:VersionBuild="161"
+  DTS:VersionGUID="{03D5E019-8E16-4D00-B203-F5EC2FDE123B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -69,12 +69,12 @@
       DTS:CreationName=""
       DTS:DTSID="{2D1050CB-B90B-4C39-865F-968C4BD04C9D}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::SourcePrefixFileName] + &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_STR,4,1252) DatePart(&quot;m&quot;,getdate()),2) +RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;DD&quot;, DATEADD(&quot;day&quot;, -5, GETDATE())),2) + &quot;*.*&quot;"
+      DTS:Expression="@[$Package::SourcePrefixFileName] + &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_STR,4,1252) DatePart(&quot;m&quot;,getdate()),2) +RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;DD&quot;, DATEADD(&quot;day&quot;, 0, GETDATE())),2) + &quot;*.*&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceFileName">
       <DTS:VariableValue
-        DTS:DataType="8">agents_20230126*.*</DTS:VariableValue>
+        DTS:DataType="8">agents_20230213*.*</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -1491,7 +1491,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{6A6C57E2-AAB6-44B8-B418-E931B05D40BC}"
-              SQLTask:SqlStatementSource="exec [stg].[SPU_CCAI_Agents_Staging_Promote]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="exec [stg].[SPU_CCAI_Agents_Staging_Promote];&#xA;exec [stg].[SPU_CCAI_Agents_Promote];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
