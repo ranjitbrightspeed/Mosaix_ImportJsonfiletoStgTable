@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ccai_chats"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{3FC44545-608F-4822-9CFF-C9CC8EACEA01}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{7B7FCDE9-684C-436F-B425-47CDFB28BFCF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
