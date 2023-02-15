@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ccai_menus"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{863284F9-EC49-49D8-AFBD-61BFFAB2EF16}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{3B3A1CB9-E0A0-41AD-A205-3F47F098B910}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -49,12 +49,12 @@
       DTS:CreationName=""
       DTS:DTSID="{86516D20-11BD-4094-BF76-98AF6FE1B177}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::SourcePrefixFileName]+ &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_WSTR,2) DatePart(&quot;m&quot;,DATEADD(&quot;month&quot;, 0, GETDATE())),2)  + &quot;*.*&quot;"
+      DTS:Expression="@[$Package::SourcePrefixFileName]+ &quot;_&quot;+(DT_WSTR,4)YEAR(GETDATE())+Right(&quot;0&quot; + (DT_WSTR,2) DatePart(&quot;m&quot;,DATEADD(&quot;month&quot;, 0, GETDATE())),2)  +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;DD&quot;, DATEADD(&quot;day&quot;, -1, GETDATE())),2)+ &quot;*.*&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceFileName">
       <DTS:VariableValue
-        DTS:DataType="8">menus_202302*.*</DTS:VariableValue>
+        DTS:DataType="8">menus_20230214*.*</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -1869,6 +1869,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:refId="Package\Sequence Container\Move Json to Archive Folder"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
+          DTS:Disabled="True"
           DTS:DTSID="{e3ca0b70-f48b-4c7e-ab8d-b32266f3f1de}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
@@ -2500,6 +2501,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:To="Package\Sequence Container\Execute SQL Task" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Bulk Stage Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{dd99b40f-4850-4b41-b912-1fe88e6661c9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Bulk Stage Table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6A6C57E2-AAB6-44B8-B418-E931B05D40BC}"
+          SQLTask:SqlStatementSource="truncate table [stg].[CCAI_Menus_Bulk_Staging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2510,6 +2527,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{94082569-6BDF-4260-AC6A-5C3C66BC71B3}"
+      DTS:From="Package\Truncate Bulk Stage Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get Sorted Files" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2522,37 +2547,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="156,42"
           Id="Package\Get Sorted Files"
-          TopLeft="115.468749173451,60" />
+          TopLeft="115.468749173451,105.689223738368" />
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\Sequence Container\Execute SQL Task"
-          TopLeft="92.2187451687643,91.070180139273" />
+          TopLeft="49.3616029502427,95.9573982763756" />
         <NodeLayout
           Size="218.666666666667,42.6666666666667"
           Id="Package\Sequence Container\Import Bulk Json to Stg Table"
-          TopLeft="69.4479121846764,10.6754417839362" />
+          TopLeft="30.1621984843649,17.5175471758798" />
         <NodeLayout
           Size="214.666666666667,42.6666666666667"
           Id="Package\Sequence Container\Move Json to Archive Folder"
-          TopLeft="75.2291632906223,176.258777870063" />
+          TopLeft="32.3720210721007,176.258777870063" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="177.499995343387,53.3421084506028">
+          TopLeft="136.42856738397,60.1842138425465">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.7280716886701"
+              EndConnector="0,35.7731844338292"
               Start="0,0"
-              End="0,30.2280716886701">
+              End="0,28.2731844338292">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.2280716886701" />
+                    End="0,28.2731844338292" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2564,36 +2589,62 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="300.666666666667,274"
-          Size="300.666666666667,316.666666666667"
+          PanelSize="264.666666666667,224.666666666667"
+          Size="264.666666666667,267.333333333334"
           Id="Package\Sequence Container"
-          TopLeft="54.1250033061952,154.078949139224" />
+          TopLeft="80.9107171927713,189.993736603387" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="193.468749173451,102">
+          TopLeft="193.468749173451,147.689223738368">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.9895874660773,52.0789491392239"
+              EndConnector="19.7753013526537,42.304512865019"
               Start="0,0"
-              End="10.9895874660773,44.5789491392239">
+              End="19.7753013526537,34.804512865019">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.039474569612" />
+                    End="0,17.1522564325095" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.039474569612"
-                    Point2="0,26.039474569612"
-                    Point3="4,26.039474569612" />
+                    Point1="0,17.1522564325095"
+                    Point2="0,21.1522564325095"
+                    Point3="4,21.1522564325095" />
                   <mssgle:LineSegment
-                    End="6.98958746607732,26.039474569612" />
+                    End="15.7753013526537,21.1522564325095" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.98958746607732,26.039474569612"
-                    Point2="10.9895874660773,26.039474569612"
-                    Point3="10.9895874660773,30.039474569612" />
+                    Point1="15.7753013526537,21.1522564325095"
+                    Point2="19.7753013526537,21.1522564325095"
+                    Point3="19.7753013526537,25.1522564325095" />
                   <mssgle:LineSegment
-                    End="10.9895874660773,44.5789491392239" />
+                    End="19.7753013526537,34.804512865019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177.333333333334,42.6666666666667"
+          Id="Package\Truncate Bulk Stage Table"
+          TopLeft="106.249998416751,8.87218067190327" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="194.192707128435,51.5388473385699">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.1503763997984"
+              Start="0,0"
+              End="0,46.6503763997984">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.6503763997984" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2609,7 +2660,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Sequence Container\Import Bulk Json to Stg Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="174.666666666667,42.6666666666667"
           Id="Package\Sequence Container\Import Bulk Json to Stg Table\OLE DB Destination"
@@ -2649,9 +2700,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
