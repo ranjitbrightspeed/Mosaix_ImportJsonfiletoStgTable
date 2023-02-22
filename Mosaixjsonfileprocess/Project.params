@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
   <SSIS:Parameter
-    SSIS:Name="SourceFolderpath">
+    SSIS:Name="SourceFolderPath">
     <SSIS:Properties>
       <SSIS:Property
         SSIS:Name="ID">{c50aaf42-fe8f-440b-938f-660bad60a403}</SSIS:Property>
@@ -16,28 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">D:\ImportRepository\ccai\</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="SourceFilenameprefix">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{d3ff4556-0599-46e4-83ee-aba86a38654c}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">chats</SSIS:Property>
+        SSIS:Name="Value">D:\ImportRepository\ccai</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

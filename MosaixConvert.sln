@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.2092
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Mosaixjsonfileprocess", "Mosaixjsonfileprocess\Mosaixjsonfileprocess.dtproj", "{DA08952F-8EA3-4B12-9C64-4811332E166A}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "MosaixConvert", "Mosaixjsonfileprocess\MosaixConvert.dtproj", "{DA08952F-8EA3-4B12-9C64-4811332E166A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
