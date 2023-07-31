@@ -16,7 +16,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">D:\ImportRepository\ccai</SSIS:Property>
+        SSIS:Name="Value">D:\ImportRepository\rpt-mass-market-digital-bi\CCAI</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -64,28 +64,7 @@
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="DataSet">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{47152f7b-2c65-44c2-9e3d-cfa75dd644be}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">System.Object</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ArchiveFile">
+    SSIS:Name="ArchiveFolderPath">
     <SSIS:Properties>
       <SSIS:Property
         SSIS:Name="ID">{22f802d8-eb37-483c-a0a1-16df741d0c82}</SSIS:Property>
@@ -100,7 +79,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">D:\ImportRepository\ccai\Archive</SSIS:Property>
+        SSIS:Name="Value">D:\ImportRepository\rpt-mass-market-digital-bi\CCAI\Archive</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

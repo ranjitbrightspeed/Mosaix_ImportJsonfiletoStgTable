@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="WH01.ImportStaging"
+  DTS:DTSID="{EDBEE3CC-AA4B-4C6B-82E8-D87F16BB0CEF}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectByProxy">@[$Package::BSBIDEWH01ImportStaging_ConnectByProxy]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=BSBIDEWH01;Initial Catalog=ImportStaging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ccai_agents-{EDBEE3CC-AA4B-4C6B-82E8-D87F16BB0CEF}BSBIDEWH01.ImportStaging;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

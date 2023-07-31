@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="WH01.mosaix"
+  DTS:DTSID="{06F77BB7-DDFB-48F3-A898-AEC3F01406E8}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectByProxy">@[$Package::WH01Mosaix_ConnectByProxy]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=BSBIDEWH01;Initial Catalog=mosaix;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ccai_agents-{06F77BB7-DDFB-48F3-A898-AEC3F01406E8}BSBIDEWH01.mosaix;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
